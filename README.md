@@ -40,3 +40,150 @@ Probably Security toke with reward or loyalty service might work, or governance 
 
 So basically depending on the valuation of the company security tokens will be created. Each tokens value will rely on the company's share, valuation or any other means of value. In that case the company must be trasparent about their products/work/share/etc to build the trust among users. Allowing token exchage in wallet's or other platform may also help. So far, security tokens seems to be a good option despite some legal challenges. These security tokens are built on top of existing reputable blockchain with standard protocols (ERC20, ERC1400, etc.) rather than building our own cryptocurrency network and coin. This is primarily because the public blockchains are heavily tested on security and infrastracture of its host chain. This is more reliable than new unproven system as new chains are vulnerable to privacy risks. Also it will reduce the complexity, time, cost and security risks. Using an existing token standards will make it easier for token interchangeability. 
 
+
+# Day-3
+
+Choosing the right metodology:
+Agile will be most suitable approach to manage the project. Instead of trying to build the entire project at once, we can work on the fundamental task first like building the token payment functionality, test it with a small user group, and then subsequently work on other task.
+
+Initial Plan:
+- Collecting general information: an overview of the project.
+- Project goals and objectives. What is the expected outcome? What are we trying to build?
+- Project boundaries (legal works, financial, feasibility of the project)
+- Identifying potential risks to come up with the solution.
+- What and how am I going to deliver my daily output?
+- Are we going to use any project management tool, like Jira, Trello or kanban board for tracking workflow?
+- What about strctured documentations. [Confluence, Document360]
+
+
+Q: How to choose the optimal legal jurisdiction for your Security Token Offering (STO), as regulations vary globally.
+Q: Which Token Standard is suitable in our case ERC-20, ERC-1400 or ERC-3643 ?
+Q: Security Token Offering (STO)
+Q: U.S. Securities and Exchange Commission (SEC) guidelines
+Q: Mint/Issuance of token ? [Pre-STO minting, As-needed minting]
+
+
+The technical requirements for security tokens primarily involve the use of specialized smart contract standards that embed regulatory compliance rules directly into the code. Unlike basic tokens, security tokens must be programmable to ensure adherence to financial laws and investor protections across different jurisdictions.
+
+Token Standards
+ERC-20 - A standard interface for fungible (interchangeable) tokens, like voting tokens, staking tokens or virtual currencies.
+ERC-721 - A standard interface for non-fungible tokens, like a deed for artwork or a song.
+ERC-1155 - allows for more efficient trades and bundling of transactions – thus saving costs. This token standard allows for creating both utility tokens (such as $BNB or $BAT) and Non-Fungible Tokens like CryptoPunks.
+
+ERC-20 (Ethereum Request for Coments 20)
+Token standard allows developers to build token applications that are interoperable with other products and servies. Token standards defines how tokens behave and interact across the Ethereum ecosystem. ERC-20 standard is used to provide additional funcionality to ether. ERC-20 uses Fungible Tokens (token against property where each token is exactly the same, both in terms of type and value, as another token. ERC-20 implements an API for tokens within Smart Contracts.
+As of 06/20/2024 at least $83,656,418 worth of ERC-20 tokens were lost due to token reception issue. Note that a pure ERC-20 implementation is prone to this problem unless you implement a set of additional restrictions on top of the standard as listed below.
+When ERC-20 tokens are sent to a smart contract that is not designed to handle ERC-20 tokens, those tokens can be permanently lost. This happens because the receiving contract does not have the functionality to recognize or respond to the incoming tokens, and there’s no mechanism in the ERC-20 standard to notify the receiving contract about the incoming tokens.
+https://ethereum.org/developers/docs/standards/tokens/erc-20/
+
+ERC-223
+The main difference of ERC-223 with ERC-20 is that ERC-223 defines not only the token API but also the logic for transferring tokens from sender to recipient. It basically addresses some limitations of ERC-20 and introduces a new method of interaction between the token contract and a contract that may receive the tokens. Here, Recipients can detect that an ERC-223 token is being deposited. If a user sends ERC-223 tokens to a contract not supposed to receive tokens, the contract can reject the transaction, preventing token loss. ERC-223 tokens can include metadata, allowing arbitrary information to be attached to token transactions.
+ERC-223 has it's own limitations:
+- ERC-223 is not yet widely adopted, which may limit its compatibility with existing platforms
+- ERC-223 is not backward compatible with ERC-20, existing ERC-20 contracts and tools will not work with ERC-223 tokens without modifications
+- additional checks and functionalities in ERC-223 transfers may result in higher gas costs compared to ERC-20
+https://ethereum.org/developers/docs/standards/tokens/erc-223/
+
+ERC-1363
+It's an extension interface for ERC-20 tokens. It supports executing custom logic on a recipient contract after transfers, or on a spender contract after approvals, all within a single transaction. It provides basic functionality to transfer tokens, as well as allow tokens to be approved so they can be spent by another on-chain third party, and then make a callback on the receiver or spender contract.
+
+
+ERC-1400
+ERC-1400 addresses the need for a standardized approach to issuing, managing, and transferring security tokens, while providing customizable regulatory enforcement, integrating global jurisdictional laws, and facilitating the incorporation of off-chain data into transactions for real-world validation and authorization. It allows for features like restricted transfers, partitioned balances, and the management of associated legal documents (off-chain validation of certificates)
+ERC-1400 is a compelling solution for enterprises seeking to tokenize assets while ensuring compliance with regulatory standards and maintaining security. Its versatility and robust features make it suitable for various use cases within different industries. Some relevant use cases for ERC-1400 are: Tokenized Securities, Real estate tokenization, Asset-backed tokenization, Private equity tokens, Supply chain finance, Intellectual Property Rights, Tokenized Funds.
+
+T-REX ERC-3643
+The  tokenized securities, or security tokens cannot be permissionless tokens like utility tokens, which can be transferred to anyone. They must be permissioned tokens in order to track ownership and make sure that only eligible investors can hold tokens, in order to comply with securities laws such as KYC, AML. T-REX ensures that an investor cannot become a holder of any digital securities without fulfilling all compliance requirements. Also, regulators can audit these smart contracts to verify an issuer's compliance, contributing towards a secure, transparent, and efficient system for managing security tokens.  ERC3643 tokens maintain full compatibility with all ERC-20.
+The management of compliant transactions through T-REX backed permissioned tokens depends on 4 main pillers which allow issuers  allow issuers to use a decentralized Validator to control transfers and enforce compliance on the holders of the security token:
+- ONCHAINID : a blockchain based identity management system, allowing for the creation of a globally accessible identity for every stakeholder.
+- A set of validation certificate (verifiable credentials) : emitted by trusted thrid parties and signed on-chain, each of them linked to a single ONCHAINED.
+- An Eligibility Verification System (EVS): to filter transactions based on issuer rules, and compliance rules ensuring adherence to offering regulations.
+- A set of Compliance Rules (e.g. offering rules): 
+Two main types of control requriement associated with the issuance, holding, and transfer of security tokens:
+1. General Regulatory Controls : Universal laws that apply to all securities, regardless of whether they are tokens. e.g. KYC, AML
+2. Specific Security Controls : These rules are specifically tied to the individual security offering itself. They might restrict who can invest based on their location, type (accredited, retail investor) , or impose limits on how much money can be invested within a certain timeframe.
+
+
+
+Initial Coin Offering (ICO)
+Initial Coin Offering (ICO) is a fundraising method for blockchain projects where a company sells new digital tokens to investors in exchange for cryptocurrency or fiat currency. The tokens can be used to access the project's future services, represent a stake in the project, or be resold for profit. 
+A company develops a business idea and prepares a detailed document called a whitepaper. This document outlines the project, its goals, technical details, the problem it aims to solve, and how the issued tokens will be used within the ecosystem. Digital tokens are created using blockchain technology, usually on platforms like Ethereum, Binance Smart Chain, or Solana. The company defines the tokenomics, including the total supply, distribution plan, and any additional features (e.g., staking or governance rights). Some ICOs include a pre-sale phase where tokens are sold to select investors at a discounted rate. This phase helps generate initial funding and builds momentum for the main ICO event. During the ICO, tokens are sold to the public through the project’s website or other designated platforms. Investors send their funds (typically in cryptocurrency) to a specified address in exchange for tokens.
+After the fundraising period, tokens are distributed to the investors, and they can either hold them or trade them on cryptocurrency exchanges if the tokens are listed.
+
+Security Token Offering (STO)
+A Security Token Offering (STO) is when a company gives out special tokens that show ownership of real or digital assets. STOs must follow rules from financial authorities. This gives them protection similar to traditional investments like stocks and bonds. Participation in STOs carries risks, including regulatory changes and the potential for loss of assets.
+e.g. tZERO, a security token platform, conducted an STO in 2018 and gathered $134 million in resources. The platform aims to use blockchain technology to create a more efficient and transparent stock trading system.
+
+STO regulation and law in UK
+UK's Financial Conduct Authority (FCA) treats a security token like any other regulated investment if it has features similar to traditional securities like shares or debt (security-like characteristics e.g., voting rights, profit share) .This means that anyone performing a regulated activity with that token, such as selling or arranging its sale, must be authorized by the FCA. Even if a token is not easily transferable, the FCA can still consider it a regulated investment.
+Under current rules, an approved prospectus is necessary for any public offer or admission to a regulated market of a "transferable security". Howerver, there's still a number of exemptions which may be used to avoid being required to publish an approved prospectus.
+The UK’s money laundering regulations do not to apply to a firm issuing its own shares and, therefore, should not apply to an issuer of share tokens in an STO. However, any other business involved in the Security Token Offering (STO) such as a crypto exchange, investment firm, or insurance providermust comply with the UK's money laundering rules. This is because these businesses are considered financial institutions.
+If an individual transfers a security token, for example, by selling, exchanging, or gifting it, they are subject to Capital Gains Tax.
+A new rules based on the OECD's Crypto-Asset Reporting Framework (CARF) will require UK service providers to collect and report customer information to HMRC
+https://cms.law/en/int/expert-guides/cms-expert-guide-to-security-token-offerings/united-kingdom
+
+Existing crypto-wallets and features
+Hot Wallets (Software-Based): 
+1. MetaMask: 
+	- Key Features:
+	- Primarily focused on Ethereum and EVM-Compatible blockchain.
+	- Support for Binance Smart Chain, Polygon, Avalance, etc.
+	- Built in token swap across 10+ Blockchains
+	- Native NFT support
+	- Staking avaible for ETH and Polygon
+	- Pros: popularity on ethereum ecosystem, dApp integration, strong community and developer support
+	- Cons: High flat on-ramp fees, does not support non-EVM cryptocurrencies (BTC, Cardano), Gas fees can be expensive during network congestion
+
+2. Coinbase Wallet
+	- Key Features:
+	- Integration with coinbase exchange
+	- Suppoorts huge number of cryptocurrencies
+	- DeFi protocol access
+	- NFT storage
+	- Easy transfer 
+	- Self custody
+
+	- Pros: Coinbase integration, popularity, flat-on ramp
+	- Cons: limited blockchain support, fewer features, 
+
+Cold Walelt (Hardware-Based):
+1. Ledger Flex
+	- Key Features:
+	- 2.84-inch E Ink touchscreen
+	- Support for 5,500+ cryptocurrencies
+	- Secure Element chip with CC EAL6+ certification
+	- Bluetooth and NFC support
+	- Wireless charging
+	- Integration with Ledger Live app
+	- NFT display capabilities
+
+	- Pros: large touchscreen for easy navigation, wireless connectivity options, excellent security certification, mobile-friendly
+	- Cons: Expensive at $249, Closed-source firmware, Bluetooth connectivity introduces minor security considerations
+
+2. Ledger Nano X
+- Key Features:
+- Dual-chip architecture
+- Support for 5,500+ tokens
+- Bluetooth connectivity
+- Ledger Live software integration
+- Secure Element chip
+- Can store multiple wallet apps simultaneously
+
+- Pros: Market favorite with proven track record, Mobile management without cables, Strong hardware security, Extensive asset support
+- Cons: Closed-source software, Past data breach concerns (customer data, not funds), Bluetooth may concern security purists
+
+
+Digital wallets for restaurants primarily offer seamless, contactless payment and transaction management through innovative technologies like QR codes, RFID, and mobile interfaces.
+Payment Processing
+Instant Conversion (Fiat On/Off-Ramps
+Multi-Currency Support
+Integration with POS Systems
+Transaction History and Tracking
+Security Features
+Private Key 
+Authentication
+Multi-signature (Multi-sig) support
+User-Friendly Interface
+Low Fees and Fast Transactions
+In essence, for restaurant use corefunctionality is less about running a full blockchain node (as a traditional Bitcoin wallet would do) and more about providing a fast, secure, and easy-to-use payment gateway solution that simplifies the adoption of digital currencies for everyday commerce. 
+
