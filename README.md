@@ -187,3 +187,64 @@ User-Friendly Interface
 Low Fees and Fast Transactions
 In essence, for restaurant use corefunctionality is less about running a full blockchain node (as a traditional Bitcoin wallet would do) and more about providing a fast, secure, and easy-to-use payment gateway solution that simplifies the adoption of digital currencies for everyday commerce. 
 
+
+
+# Day-4
+
+## Regulatory Landscape of Cryptocurrencies
+The regulatory landscape for cryptocurrencies varies significantly from country to country. Some countries have embraced cryptocurrencies and blockchain technology, whereas some other have taken a more cautious approach to regulating cryptocurrencies. Countries which embraced blockchain and cryptocurrency adopts regulatory frameworks that promote innovation and investment in the sector. These countries typically have clear regulations governing the use of cryptocurrencies, including licensing requirements for cryptocurrency exchanges and anti-money laundering (AML) and know your customer (KYC) regulations. However, countries which are more cautious with cryptocurrencies are concerns about the potential for misuse and financial instability. These countries may have stricter regulations in place, such as bans on cryptocurrency trading or restrictions on the use of cryptocurrencies for certain transactions. 
+The varying regulatory approaches to cryptocurrencies can be attributed to different perspectives on the technology. Some regulators and policymakers view cryptocurrencies as a revolutionary technology that has the potential to disrupt traditional financial systems and drive innovation. These jurisdictions tend to have more favorable regulatory environments for cryptocurrencies, encouraging investment and development in the sector.
+China, has banned cryptocurrency trading and initial coin offerings (ICOs), citing concerns about financial risks and illegal activities. India has also proposed legislation to ban cryptocurrencies, although the final outcome remains. In the United States, the regulatory approach to cryptocurrencies varies at the federal and state levels. The U.S. Securities and Exchange Commission (SEC) has taken enforcement actions against ICOs that it considers to be securities offerings, while the Commodity Futures Trading Commission (CFTC) regulates cryptocurrencies as commodities. At the state level, some states have enacted laws to regulate cryptocurrencies, while others have taken a more hands-off approach.
+
+## Regulatory Bodies for Financial Services
+1. Securities & Exchange Commission (SEC) - US
+2. Financial Crimes Enforcement Network (FinCEN) - US
+3. Federal Reserve - US
+4. ESMA (European Securities and Markets Authority) - EU
+5. MiCA Regulation - EU
+
+6. FATF (Financial Action Task Force) - Global
+7. IOSCO (International Organization of Securities Commissions) - Global
+8. IMF (International Monetary Fund) - Global
+
+9. Australian Securities and Investment COmmission (ASTC) - AU
+10. Australian Prudential Regulation Authority (APRA) - AU
+11. Reserve Bank of Australia (RBA) - AU
+
+13. Financil Conduct Authority (FCA) - UK
+14. Prudential Regulation Authority (PRA) - UK
+
+## UK's Financial Regulatory framework
+As security tokens are regulated by the Financial Conduct Authority (FCA) under the Financial Services and Markets Act (FSMA) and the Regulated Activities Order (RAO). This means that we may need FCA authorization, and our offering could be subject to prospectus and disclosure requirements.
+However, if we go with stablecoin, which value is backed by company reserves, it may fall under e-money regulations, requiring you to be licensed as an e-money institution.
+Some of the core rules are:
+⦁	All crypto businesses must register with the FCA and comply with AML and counter-terrorist financing regulations
+⦁	If our token is a security, we may need to publish a prospectus and provide clear, non-misleading information to investors.
+⦁	There are strict rules on marketing, especially to retail investors, and derivatives referencing crypto-assets are banned for retail sale.
+⦁	We have to maintain ongoing compliance procedures for safeguarding assets, handling complaints, and preventing market abuse.
+
+## Legal Strategy
+For security token (A crypto backed by company) falls under security law in most jurisdictions (SEC, FCA, ASIC). We may need a license as a Digital Asset Service Provider (DASP) or equivalent depending on jurisdiction. AML/KYC obligations needs to applied on token issuance and wallet services. As our token will be used for payments, company will have to follow payment services regulation ( like e-money rules) as well.
+
+## Corporate Structure
+Legal Entity Type: Most issuers use corporations or LLCs for equity tokens, or SPVs (Special Purpose Vehicles) for asset-backed tokens. SPV is required for tax-efficient jurisdiction to handle the actual issuance, sale, and distribution of the security tokens. This separation helps ensure that any regulatory issues with the token do not directly impact the core operating company.
+For asset-backed tokens (like real estate or share), SPV is used to hold the underlying physical asset. The shares of this holding company are then tokenized, allowing the tokens to represent an indirect interest in the asset without requiring a physical transfer of title for every token trade.
+Choosing a right jurisdiction with clear digital asset regulations (U.S./Switzerland/Singapore). Token-friendly jurisdictions reduce regulatory uncertainty.
+
+## Asset-Backed Tokens
+Asset-backed tokens are digital claims on a physical asset and are backed by that asset. Ownership of the token usually represents a right of ownership over the asset and, depending on the asset, may come with the expectation of future returns when the asset appreciates in value. As the asset itself appreciates in value, so does the token.
+
+## Finding suitable blockchain network
+Since we are aiming that our currency will be backed by the company's share and we are inteded for restaurant payments, Ethereum seems to be the most suitable for asset-backing project. We can use their exisiting mature token standards like ERC-1400 which is specifically designed for security tokens regulated assets (share). Or we can also use the most updated ERC-3649 as well. Using existing tokens gives the benefits of meeting compliance requirements, investor protections, and governance models. Since, their existing reputed ecosystem with strong developer supports makes their privacy stronger than building our own.  However, ehtereum's transaction fees can be relatively high which may cause lesser revenue for small scale business., especially if we compare with Polygon which has lower fees.
+Polygon is a layer-2 solution (was built on top of ethereum base chain, i.e. scaling layer). It offers scalability + lower transaction cost, which makes it more suitable for our business. As we know, restaurants requires fast, cheaper transactions, both of these are achieveable by polygon's high thoughput. Polygon is not only compatible with ethereum, we can also share our token on ethereum for beter trust and compliance. 
+
+## Security requirements for holding security tokens
+KYC/AML: identity verification requires, like document checks, sancations/PEP screening, ongoing monitoring , and restrict transfers to verfied investors only.
+Disclosure: Ongoing reporting and disclosure obligations are part of regulatory compliance regimes for security tokens
+Transfer controls: allowlists/denylists, jurisdiction rules, lock-up periods, and suitability checks at the contract layer to prevent transfers to non-compliant addresses.
+Emergency control: pausability for incidents, dispute resolution hooks, and controlled upgrade paths with transparent governance.
+
+## Private Placement Memorendum (PPM)
+PPM is a legal disclosure document needed to potential investors when a company offers securities (like shares or share‑backed tokens) in a private placement. It’s essentially the investor’s guidebook, explaining the opportunity, risks, and legal terms.
+It protects the company by disclosing all material information, reducing liability, and ensuring compliance with securities laws.
+It covers financials, business model, risks, management team, and terms of the offering.
