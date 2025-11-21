@@ -248,3 +248,150 @@ Emergency control: pausability for incidents, dispute resolution hooks, and cont
 PPM is a legal disclosure document needed to potential investors when a company offers securities (like shares or share‑backed tokens) in a private placement. It’s essentially the investor’s guidebook, explaining the opportunity, risks, and legal terms.
 It protects the company by disclosing all material information, reducing liability, and ensuring compliance with securities laws.
 It covers financials, business model, risks, management team, and terms of the offering.
+
+
+# Day - 5
+
+## Consensus Mechanisms
+
+### Proof of Work (PoW)
+PoW requires network participants called miners to solve computationally intensive cryptographic puzzles to validate transactions and create new blocks. Miners compete to find a specific hash value by repeatedly calculating hash functions with different nonce values until they find one that meets the network’s difficulty requirements. The first miner to solve the puzzle broadcasts the solution to the network and receives a cryptocurrency reward.
+Characteristics:
+-	Energy-intensive computational competition, as it requires significant computational power and electricity 
+-	Permissionless participation
+-	Probabilistic finality requiring multiple block confirmations
+-	Strong security against attacks when majority of hash power is honest, but vulnerable to 51% attacks if an entity controls majority hash power
+
+### Proof of Stake (PoS)
+PoS replaces computational work with economic stake. Here, validators are selected randomly or based on the amount of cryptocurrency they hold and “stake” as collateral. There are two main PoS variants: chain-based PoS where validators are selected periodically in a semi-random fashion, and BFT-based PoS using voting procedures. Validators are required to lock up (stake) a certain amount of cryptocurrency as collateral. 
+If a validator acts dishonestly, two main consequences follow:
+1.	Slashing of Staked Tokens: The malicious validator loses a portion or all of their staked tokens as a penalty (called "slashing"). 
+2.	Removal from Validator Set: The validator may be barred or expelled from the network's active validator pool, meaning they lose the ability to participate in validation and earn rewards. 
+
+Additionally, honest validators and other network nodes verify transactions and blocks. If they detect suspicious activity, they reject the invalid data, which prevents malicious blocks from being added to the blockchain
+
+Characteristics:
+-	Energy-efficient compared to PoW
+-	Selection probability proportional to stake size
+-	Validators can lose staked tokens for malicious behavior
+-	Faster transaction confirmation times
+
+
+
+
+### Delegated Proof of Stake (DPoS)
+
+DPoS uses a voting system where token holders elect a limited number of delegates (typically 21-101) to validate transactions and produce blocks. These elected delegates take turns creating blocks in a scheduled rotation, enabling faster block times of 2-10 seconds. If a delegate acts maliciously, misses blocks, or performs poorly, voters can retract their votes and elect new delegates. Delegates also lock part of their stake which can be slashed if they behave badly.
+
+Key characteristics:
+-	Democratic election of validators
+-	Higher throughput than basic PoS
+-	Reduced decentralization due to limited validator set
+-	Risk of vote buying and centralization
+
+### Practical Byzantine Fault Tolerance (PBFT)
+PBFT enables consensus in networks where up to one-third of nodes may behave maliciously. The protocol uses multiple rounds of message exchange and voting between designated roles (leaders and validators) to achieve deterministic finality. So, it can function correctly even if up to one-third of nodes are compromised or faulty. But, it requires extensive messaging among nodes each consensus round
+
+Key characteristics:
+-	Instant transaction finality
+-	Requires known participant identities
+-	Limited scalability due to quadratic message complexity
+-	Strong consistency guarantees
+
+### Proof of Authority (PoA)
+PoA relies on pre-approved validators whose real-world identities and reputations are publicly known and staked. Validators are selected through a strict vetting process and must maintain their reputation to continue participating in consensus.
+
+Key characteristics:
+-	High transaction throughput and low latency
+-	Reduced energy consumption
+-	Centralized validator selection
+-	Suitable primarily for private/consortium networks
+
+
+
+
+## Tokenomics Models for business-share backed Coins
+
+Tokenonomics is the systems that govern cryptocurrencies and digital tokens. It is the fundamental blueprint that outlines a project's financial structure and incentive mechanisms. It's crucial for a project's long-term sustainability and success. 
+
+Key-components:
+- **Token Supply**: The total number of tokens that will ever exist in our system.
+  
+  * Maximum supply: A fixed, hard cap on the total number of tokens which creates scarcity and can drive value. For example, bitcoin's 21 million limit.
+  * Circulating Supply: The number of tokens currently available and actively traded in the market.
+  * Total Supply: The total amount of tokens in existence, including locked or reserved tokens, minus any burned tokens.
+  * Inflationary vs Deflationary Models: Some tokens have a continuously increasing supply which is called inflationary, like Dogecoin's unlimited supply. On the other hand some token use mechanisms like token burns to permanently remove tokens from circulation (deflationary), creating scarcity.
+
+
+- **Token Distribution and Allocation**: Tokens are initially distributed among various stakeholders, such as the founding team, early investors, and the community. Transparent and fair distribution is vital for maintaining trust and preventing a few large holders from manipulating the market. Vesting schedules, which release allocated tokens over time, are often used to ensure long-term commitment.
+
+- **Token Utility and Functionality**: A token must have practical use cases within its ecosystem to generate sustained demand.
+  * Medium of Exchange: Used to pay for goods, services, or transaction fees on the network.
+  * Governance: Grants holders the right to vote on important decisions, protocol upgrades, or the allocation of treasury funds within a decentralized autonomous organization (DAO).
+  * Staking and Rewards: Users can lock up tokens to help secure the network and validate transactions in exchange for rewards, often in the form of newly minted tokens.
+
+
+
+## General options for crypto integration:
+
+- **Accepting Crypto Payments**: Customers can pay using Bitcoin, Ethereum, stablecoins or tokens.
+- **Crypto Loyalty Programs**: Reward customers with tokens or points that can be converted to crypto.
+- **Crypto Gift Cards**: Allow customers to buy gift cards using crypto or redeem crypto for gift cards.
+- **On-Chain Receipts & Transparency**: Store transaction records on blockchain for transparency.
+- **Stablecoins**: Business can use stablecoins for less volatility.
+- **Native tokens**: Businesses can issue their own tokens.
+
+### Possible ways to integrate
+
+- **Using a Crypto Payment Gateway:** Services like BitPay, Coinbase Commerce, NOWPayments, or Binance Pay. They handle conversion to fiat automatically if we don’t want to hold crypto. Integration is usually via API or plugins for POS systems.
+
+- **POS System Integration**: Adding a crypto payment module in our POS system. If it doesn't support pluggin we can use a QR code system (customer scans and pays). Or we can also add a tablet or mobile app for crypto payments alongside your POS.
+
+- **Wallet Setup**: Building our own wallet crypto-wallet (hardware wallet for security or custodial wallet via payment gateway). Depends on if we are going to hold crypto or convert to fiat immediately.
+
+- **Compliance & Tax**: Local regulations for crypto transactions is still a concern. We have to ensure proper accounting for crypto payments (tax implications vary by country).
+
+
+### Issuing Our Own Business Token
+
+Businesses can create their own token for: 
+- Payments (customers pay with your token).
+- Loyalty & Rewards (earn tokens for purchases).
+- Discounts & Perks (special offers for token holders)
+
+
+#### Does holding the token make someone an owner?
+If the token is legally backed by company's equity, then yes. Holders will have ownership rights similar to shareholders. Which means we are issuing a security token, not just a payment token and it falls under securities regulations in most jurisdictions. In that case, we will need proper legal compliance (KYC, inverstor agreement, ect.)
+
+
+## Cryptocurrency key management
+
+### Custodial vs Non-Custodial
+
+**Custodial**: A third-party service (like Coinbase Commerce, BitPay) manages your keys. These are easy to setup, less technical complexity. But we have to **rely on the provider’s security** and we will have **less control** in this case.
+
+
+**Non-Custodial**: Here, we will manage our own keys. We will have full control, no dependency on third parties. But the challenges will be the **higher responsibility for security**.
+
+
+
+
+### Key Management Options
+
+- **Hardware Wallets**: Devices like Ledger or Trezor store private keys offline. Best for cold storage or high-value funds. For POS we can use hardware wallets for settlement, but not practical for every transaction.
+
+- **Software Wallets**: These are installed on POS or a dedicated device. For examples, MetaMask, Trust Wallet. However, If POS is compromised, keys can be stolen.
+
+- **Multi-Signature Wallets**: This requires multiple keys to authorize a transaction. It may be good for businesses with multiple managers. Example: Gnosis Safe.
+
+- **Hierarchical Deterministic (HD) Wallets**: It generates multiple addresses from a single seed phrase. It is useful for tracking payments per customer or per transaction.
+
+- **Key Vault Services**: Enterprise-grade solutions like AWS KMS, Azure Key Vault, or HashiCorp Vault. Store keys securely and integrate with POS via API.
+
+
+
+		Caution: Never store private keys in plain text on POS. Use encrypted storage and secure enclaves if possible. Implement role-based access control. Regular backups of seed phrases in offline secure locations. Consider hot wallet for daily transactions + cold wallet for reserves.
+
+
+#### Flow:
+POS triggers payment → Customer sends crypto → POS verifies transaction using blockchain API → Funds go to business wallet (managed via one of the above methods).
